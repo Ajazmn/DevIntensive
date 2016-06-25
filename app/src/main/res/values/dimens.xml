@@ -26,4 +26,9 @@
     <dimen name="default_padding">8dp</dimen>
     <dimen name="nested_scroll_view_height">32dp</dimen>
 
+    <!-- Fonts. -->
+    <dimen name="font_size_16">16sp</dimen>
+    <dimen name="font_size_20">20sp</dimen>
+    <dimen name="font_size_24">24sp</dimen>
+
 </resources>
