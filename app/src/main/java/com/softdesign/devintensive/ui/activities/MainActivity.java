@@ -71,6 +71,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         // mCallImg.setOnClickListener(this);
         setupToolbar();
         setupDrawer();
+        loadUserInfoValue();
 
         if (savedInstanceState == null) {
             // активити запускается впервые
@@ -110,6 +111,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     protected void onPause() {
         super.onPause();
         Log.d(TAG, "onPause");
+        saveUserInfoValue();
     }
 
     @Override
@@ -205,6 +207,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     }
 
     private void saveUserInfoValue() {
-
+        List<String> userData = new ArrayList<>();
+        for (EditText userFieldView : mUserInfoViews) {
+            userData.add(userFieldView.getText().toString());
+        }
+        mDataManager.getPreferencesManager().saveUserProfileData(userData);
     }
 }
